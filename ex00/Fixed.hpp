@@ -1,8 +1,9 @@
-#ifndef FIXED_H
-#define FIXED_H
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <string>
+#include "colors.hpp"
 
 class Fixed
 {
@@ -10,16 +11,16 @@ class Fixed
     public:
 
     Fixed();
-    ~Fixed();
     Fixed(const Fixed &obj);
     Fixed& operator=(const Fixed &obj);
+    ~Fixed();
 
     int getRawBits( void ) const;
     void setRawBits( int const raw );
 
     private:
 
-    int _value;
+    int _fixed_point_value;
     static const int _fractionalBits = 8;
 };
 
