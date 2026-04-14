@@ -1,6 +1,6 @@
 NAME	=	Fixed
-CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\
 			Fixed.cpp
 OBJS	=	$(SRCS:.cpp=.o)
@@ -10,10 +10,10 @@ RM		=	rm -rf
 all : $(NAME)
 
 %.o : %.cpp
-	@$(CC) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+	@$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
 clean:
 	@${RM} ${OBJS}
